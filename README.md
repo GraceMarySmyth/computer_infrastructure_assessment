@@ -52,3 +52,8 @@ In this project, you will automate your weather.sh script to run daily and push 
 7. Test the Workflow Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
 
 (https://github.com/ianmcloughlin/2425_computer_infrastructure/blob/main/README.md)
+
+
+* Due to an issue identified on Tuesday 10th December 2024. The issue was that because there was so many requests for information to Met Eireann, That the firewall in Met Eireann may have started blocking requests. This is common  with automated scripts. For this reason, althought he project brief specified that the script be run at 10.00, Ian requested that we each individually pick different times to request the information from Met Eireann.
+ It is good practice to put scripts into a Notebbok to test the code first and ensure they are running correctly. 
+ The Notebook for this part of the assignment is in the directory "Notebooks"
