@@ -1,8 +1,6 @@
 name: Get Weather
 
 
-name: Weather Automation
-
 on:
   schedule:
     - cron: '30 8 * * *'  # This means 08:30 every day
