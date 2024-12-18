@@ -1,27 +1,48 @@
 name: Get Weather
 
+To trigger the action to run at 08:30 every day, you can use the `schedule` event in your GitHub Actions YAML file. Here's the modified version:
+
+```yaml
+name: Weather Automation
+
 on:
-    schedule:
-        - cron: '30 8 * * *'
-    workflow_dispatch:
+  schedule:
+    - cron: '30 8 * * *'  # This means 08:30 every day
+  push:
+    branches:
+      - main
 
 jobs:
-    run-weather-script:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: Checkout repository
-            uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-        - name: Set up Python
-            uses: actions/setup-python@v2
-            with:
-                python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Specify the Python version you want
 
-        - name: Install dependencies
-            run: |
-                python -m pip install --upgrade pip
-                pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-        - name: Run weather automation script
-            run: python weather_authomation.py
+      - name: Run weather automation script
+        run: |
+          python weather_automation.py
+
+      - name: Push changes
+        run: |
+          git config --global user.email "gracemurphy45@gmail.com"  # Replace with your email
+          git config --global user.name "GraceMarySmyth"  # Replace with your name
+          git add .
+          git commit -m "Update from weather automation"
+          git push
+```
+
+This configuration will ensure that your action runs at 08:30 every day based on the cron syntax.
+
+y
