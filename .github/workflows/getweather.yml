@@ -40,7 +40,6 @@ jobs:
           git add .
           git commit -m "Update from weather automation"
           git push
-```
 
 This configuration will ensure that your action runs at 08:30 every day based on the cron syntax.
 
