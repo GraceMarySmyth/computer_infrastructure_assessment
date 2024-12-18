@@ -2,7 +2,6 @@ name: Get Weather
 
 To trigger the action to run at 08:30 every day, you can use the `schedule` event in your GitHub Actions YAML file. Here's the modified version:
 
-```yaml
 name: Weather Automation
 
 on:
