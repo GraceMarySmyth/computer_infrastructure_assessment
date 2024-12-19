@@ -3,6 +3,7 @@
 import pandas as pd
 import datetime as dt
 import os
+import lxml
 
 df = pd.read_html('https://data.gov.ie/dataset/todays-weather-athenry')
 
